@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class Cell : MonoBehaviour
@@ -9,8 +8,6 @@ public class Cell : MonoBehaviour
 
     private Item item;
     public Item Item { get { return item; } }
-
-    private float swipeAnimationSpeed = 12.5f;
 
     public void Prepare(int x, int y)
     {
@@ -26,23 +23,17 @@ public class Cell : MonoBehaviour
         gameObject.name = "Cell " + cellName;
     }
 
-    public void Move(Vector3Int newPosition)
+    public void InsertItem(ItemType itemType)
     {
-        StartCoroutine(MoveAnimation(newPosition));
+        if (item != null) return;
 
-        X = newPosition.x;
-        Y = newPosition.y;
+        item = ItemFactory.CreateItem(this, itemType);
     }
 
-    private IEnumerator MoveAnimation(Vector3Int newPosition)
+    public void Move(Vector3Int newPosition)
     {
-        while (Vector3.Distance(transform.localPosition, newPosition) > Mathf.Epsilon)
-        {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, newPosition, Time.deltaTime * swipeAnimationSpeed);
-            yield return null;
-        }
-
         transform.localPosition = newPosition;
-        UpdateLabel();
+        X = newPosition.x;
+        Y = newPosition.y;
     }
 }

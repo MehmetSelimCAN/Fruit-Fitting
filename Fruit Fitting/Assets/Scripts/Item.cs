@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public SpriteRenderer SpriteRenderer;
-
     private ItemType itemType;
     public ItemType ItemType { get { return itemType; } }
 
@@ -13,17 +11,10 @@ public class Item : MonoBehaviour
         PrepareSprite();
     }
 
-    public void ChangeItemType(ItemType itemType)
-    {
-        this.itemType = itemType;
-
-        UpdateSprite();
-    }
-
     public void PrepareSprite()
     {
         Sprite sprite = GetSpritesForItemType();
-        SpriteRenderer = AddSprite(sprite);
+        AddSprite(sprite);
     }
 
     public Sprite GetSpritesForItemType()
@@ -51,11 +42,5 @@ public class Item : MonoBehaviour
         spriteRenderer.sprite = sprite;
 
         return spriteRenderer;
-    }
-
-    public void UpdateSprite()
-    {
-        Sprite sprite = GetSpritesForItemType();
-        SpriteRenderer.sprite = sprite;
     }
 }

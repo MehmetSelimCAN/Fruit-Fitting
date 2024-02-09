@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class CellBackground : MonoBehaviour
 {
-    private SpriteRenderer SpriteRenderer;
     [SerializeField] private Sprite lightGridTile;
     [SerializeField] private Sprite darkGridTile;
+    private const int BACKGROUND_SORTING_ORDER = -5;
 
     public void Prepare(int x, int y)
     {
@@ -15,7 +15,7 @@ public class CellBackground : MonoBehaviour
     public void PrepareSprite(int x, int y)
     {
         Sprite sprite = GetSpriteForCellPosition(x, y);
-        SpriteRenderer = AddSprite(sprite);
+        AddSprite(sprite);
     }
 
     public Sprite GetSpriteForCellPosition(int x, int y)
@@ -26,6 +26,7 @@ public class CellBackground : MonoBehaviour
     public SpriteRenderer AddSprite(Sprite sprite)
     {
         var spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = BACKGROUND_SORTING_ORDER;
         spriteRenderer.sprite = sprite;
 
         return spriteRenderer;

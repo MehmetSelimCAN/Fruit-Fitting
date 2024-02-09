@@ -3,7 +3,11 @@ guid: 91049450c0f48a5408f9ccf50538e780
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - AppleSprite: {fileID: 21300000, guid: f8c09b2eae5cf5949bce35b6313f53fd, type: 3}
+  - BananaSprite: {fileID: 21300000, guid: 4274c2bb4bdb9fd4b895311810c02ec2, type: 3}
+  - BlueberrySprite: {fileID: 21300000, guid: eca39bee21fa1fe469f2b7212f41b4e9, type: 3}
+  - PearSprite: {fileID: 21300000, guid: 35915a446de12354cad3dc77df10048c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

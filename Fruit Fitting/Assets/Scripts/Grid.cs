@@ -13,11 +13,6 @@ public class Grid : MonoBehaviour
     [SerializeField] private CellBackground cellBackgroundPrefab;
     public static CellBackground[,] CellsBackground;
 
-    private void Awake()
-    {
-        Prepare();
-    }
-
     public void Prepare()
     {
         CreateCellsBackground();
@@ -73,6 +68,22 @@ public class Grid : MonoBehaviour
         }
     }
 
+    public Cell GetEmptyCell()
+    {
+        for (int y = 0; y < Rows; y++)
+        {
+            for (int x = 0; x < Cols; x++)
+            {
+                if (Cells[x, y].Item == null)
+                {
+                    return Cells[x, y];
+                }
+            }
+        }
+
+        return null;
+    }
+         
     private void SwapCells(Cell firstCell, Cell secondCell)
     {
         Cells[firstCell.X, firstCell.Y] = secondCell;
