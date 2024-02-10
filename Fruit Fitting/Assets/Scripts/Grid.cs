@@ -13,6 +13,16 @@ public class Grid : MonoBehaviour
     [SerializeField] private CellBackground cellBackgroundPrefab;
     public static CellBackground[,] CellsBackground;
 
+    private void OnDisable()
+    {
+        EventManager.CellSwapEvent -= SwapCells;
+    }
+
+    private void OnEnable()
+    {
+        EventManager.CellSwapEvent += SwapCells;
+    }
+
     public void Prepare()
     {
         CreateCellsBackground();

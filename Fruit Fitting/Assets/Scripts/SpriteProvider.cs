@@ -13,4 +13,20 @@ public class SpriteProvider : MonoBehaviour
     {
         Instance = this;
     }
+
+    public Sprite GetSpriteForItemType(ItemType itemType)
+    {
+        switch (itemType)
+        {
+            case ItemType.Apple:
+                return AppleSprite;
+            case ItemType.Banana:
+                return BananaSprite;
+            case ItemType.Blueberry:
+                return BlueberrySprite;
+            case ItemType.Pear:
+                return PearSprite;
+        }
+        return null;
+    }
 }

@@ -3,27 +3,27 @@ using UnityEngine;
 public class CellDragDrop : MonoBehaviour
 {
     private BoxCollider2D cellCollider;
-    private Transform cellTransform;
+    private Transform draggingCellTransform;
     private Cell cell;
     public Cell Cell { get { return cell; } set { cell = value; } }
 
-    private Vector2 firstPosition;
+    private Vector3Int firstPosition;
 
     private void Awake()
     {
-        cellTransform = transform;
+        draggingCellTransform = transform;
         cellCollider = GetComponent<BoxCollider2D>();
     }
 
     private void OnMouseDown()
     {
-        firstPosition = new Vector2(cell.X, cell.Y);
+        firstPosition = cell.Position;
     }
 
     private void OnMouseDrag()
     {
         Vector2 newPosition = GetMousePosition() - transform.position;
-        cellTransform.Translate(newPosition);
+        draggingCellTransform.Translate(newPosition);
     }
 
     private void OnMouseUp()
@@ -40,7 +40,14 @@ public class CellDragDrop : MonoBehaviour
             cellToSwap = cellHit.gameObject.GetComponent<Cell>();
         }
 
-        DragDropManager.Instance.TryToSwap(firstPosition, draggingCell, cellToSwap);
+        if (cellToSwap == null)
+        {
+            draggingCellTransform.position = firstPosition;
+        }
+        else
+        {
+            EventManager.SwapCell(draggingCell, cellToSwap);
+        }
 
         cellCollider.enabled = true;
     }
