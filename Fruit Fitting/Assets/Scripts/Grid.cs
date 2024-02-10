@@ -84,7 +84,7 @@ public class Grid : MonoBehaviour
         return null;
     }
          
-    private void SwapCells(Cell firstCell, Cell secondCell)
+    public void SwapCells(Cell firstCell, Cell secondCell)
     {
         Cells[firstCell.X, firstCell.Y] = secondCell;
         Cells[secondCell.X, secondCell.Y] = firstCell;

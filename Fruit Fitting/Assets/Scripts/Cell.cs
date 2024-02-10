@@ -28,6 +28,13 @@ public class Cell : MonoBehaviour
         if (item != null) return;
 
         item = ItemFactory.CreateItem(this, itemType);
+        AddDragDrop();
+    }
+
+    private void AddDragDrop()
+    {
+        CellDragDrop cellDragDrop = gameObject.AddComponent<CellDragDrop>();
+        cellDragDrop.Cell = this;
     }
 
     public void Move(Vector3Int newPosition)

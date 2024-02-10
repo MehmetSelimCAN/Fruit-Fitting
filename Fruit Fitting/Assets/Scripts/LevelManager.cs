@@ -18,4 +18,10 @@ public class LevelManager : MonoBehaviour
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Apple);
     }
+
+    public void AddBanana()
+    {
+        Cell emptyCell = Grid.GetEmptyCell();
+        emptyCell.InsertItem(ItemType.Banana);
+    }
 }
