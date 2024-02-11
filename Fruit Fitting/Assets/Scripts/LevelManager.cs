@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Grid Grid;
     [SerializeField] private Level1Data level1Data;
+    [SerializeField] TextMeshProUGUI denemeText;
      
     public void PrepareGame()
     {
@@ -23,6 +25,7 @@ public class LevelManager : MonoBehaviour
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Apple);
+        denemeText.SetText(level1Data.restrictions.list[0].restrictionStr);
     }
 
     public void AddBanana()
