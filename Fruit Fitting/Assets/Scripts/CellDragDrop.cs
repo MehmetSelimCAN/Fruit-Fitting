@@ -9,15 +9,22 @@ public class CellDragDrop : MonoBehaviour
 
     private Vector3Int firstPosition;
 
+    private SpriteRenderer cellSpriteRenderer;
+    private const int DRAGGING_CELL_SORTING_ORDER = 1;
+    private const int CELL_SORTING_ORDER = 0;
+
     private void Awake()
     {
         draggingCellTransform = transform;
         cellCollider = GetComponent<BoxCollider2D>();
+        cellSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnMouseDown()
     {
         firstPosition = cell.Position;
+        cellCollider.enabled = false;
+        cellSpriteRenderer.sortingOrder = DRAGGING_CELL_SORTING_ORDER;
     }
 
     private void OnMouseDrag()
@@ -28,17 +35,14 @@ public class CellDragDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        cellCollider.enabled = false;
+        Cell draggingCell = cell;
 
         Vector2 mousePosition = GetMousePosition();
         var cellHit = Physics2D.OverlapPoint(mousePosition) as BoxCollider2D;
+        Cell cellToSwap = cellHit?.gameObject.GetComponent<Cell>();
 
-        Cell draggingCell = cell;
-        Cell cellToSwap = null;
-        if (cellHit != null)
-        {
-            cellToSwap = cellHit.gameObject.GetComponent<Cell>();
-        }
+        cellCollider.enabled = true;
+        cellSpriteRenderer.sortingOrder = CELL_SORTING_ORDER;
 
         if (cellToSwap == null)
         {
@@ -48,8 +52,6 @@ public class CellDragDrop : MonoBehaviour
         {
             EventManager.SwapCell(draggingCell, cellToSwap);
         }
-
-        cellCollider.enabled = true;
     }
 
     private Vector3 GetMousePosition()
