@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public Grid Grid;
+    [SerializeField] private Grid Grid;
 
-    public void PrepareGrid()
+    public void PrepareGame()
     {
-        Grid.Rows = 8;
-        Grid.Cols = 8;
-        Grid.CellsBackground = new CellBackground[Grid.Rows, Grid.Cols];
-        Grid.Cells = new Cell[Grid.Rows, Grid.Cols];
+        PrepareGrid();
+    }
+
+    private void PrepareGrid()
+    {
+        Grid.Rows = 5;
+        Grid.Cols = 5;
+        Grid.CellsBackground = new CellBackground[Grid.Cols, Grid.Rows];
+        Grid.Cells = new Cell[Grid.Cols, Grid.Rows];
         Grid.Prepare();
     }
 

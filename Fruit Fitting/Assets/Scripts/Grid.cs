@@ -30,6 +30,7 @@ public class Grid : MonoBehaviour
 
         CreateCells();
         PrepareCells();
+        AdjustGridPosition();
     }
 
     private void CreateCellsBackground()
@@ -76,6 +77,20 @@ public class Grid : MonoBehaviour
                 Cells[x, y].Prepare(x, y);
             }
         }
+    }
+
+    private void AdjustGridPosition()
+    {
+        Vector2 centerOfLeftSide = new Vector2(Screen.width / 4, Screen.height / 2);
+        Vector3 centerOfLeftSideToWorldPoint = Camera.main.ScreenToWorldPoint(centerOfLeftSide);
+        centerOfLeftSideToWorldPoint = new Vector3(centerOfLeftSideToWorldPoint.x, centerOfLeftSideToWorldPoint.y, 0);
+
+        float widthOffset = ((Cols - 1) / 2f);
+        float heightOffset = ((Rows - 1) / 2f);
+
+        CellsParent.transform.position = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
+        CellsBackgroundParent.transform.position = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
+
     }
 
     public Cell GetEmptyCell()

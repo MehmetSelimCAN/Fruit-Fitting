@@ -46,7 +46,7 @@ public class CellDragDrop : MonoBehaviour
 
         if (cellToSwap == null)
         {
-            draggingCellTransform.position = firstPosition;
+            draggingCellTransform.localPosition = firstPosition;
         }
         else
         {
