@@ -22,36 +22,76 @@ public class CellDragDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        firstPosition = cell.Position;
-        cellCollider.enabled = false;
-        cellSpriteRenderer.sortingOrder = DRAGGING_CELL_SORTING_ORDER;
+        GetCellFirstPosition();
+        DisableCellCollider();
+        ChangeCellSpriteRendererSortOrder(DRAGGING_CELL_SORTING_ORDER);
     }
 
     private void OnMouseDrag()
+    {
+        DragCell();
+    }
+
+    private void OnMouseUp()
+    {
+        SwapCell();
+    }
+
+    private void GetCellFirstPosition()
+    {
+        firstPosition = cell.Position;
+    }
+
+    private void DisableCellCollider()
+    {
+        cellCollider.enabled = false;
+    }
+
+    private void EnableCellCollider()
+    {
+        cellCollider.enabled = true;
+    }
+
+    private void ChangeCellSpriteRendererSortOrder(int newSortingOrder)
+    {
+        cellSpriteRenderer.sortingOrder = newSortingOrder;
+    }
+
+    private void DragCell()
     {
         Vector2 newPosition = GetMousePosition() - transform.position;
         draggingCellTransform.Translate(newPosition);
     }
 
-    private void OnMouseUp()
+    private void SwapCell()
     {
         Cell draggingCell = cell;
 
-        Vector2 mousePosition = GetMousePosition();
-        var cellHit = Physics2D.OverlapPoint(mousePosition) as BoxCollider2D;
-        Cell cellToSwap = cellHit?.gameObject.GetComponent<Cell>();
+        Cell cellToSwap = GetCellToSwap();
 
-        cellCollider.enabled = true;
-        cellSpriteRenderer.sortingOrder = CELL_SORTING_ORDER;
+        EnableCellCollider();
+        ChangeCellSpriteRendererSortOrder(CELL_SORTING_ORDER);
 
         if (cellToSwap == null)
         {
-            draggingCellTransform.localPosition = firstPosition;
+            ResetCellPosition();
         }
         else
         {
             EventManager.SwapCell(draggingCell, cellToSwap);
         }
+    }
+
+    private void ResetCellPosition()
+    {
+        draggingCellTransform.localPosition = firstPosition;
+    }
+
+    private Cell GetCellToSwap()
+    {
+        Vector2 mousePosition = GetMousePosition();
+        var cellHit = Physics2D.OverlapPoint(mousePosition) as BoxCollider2D;
+        return cellHit?.gameObject.GetComponent<Cell>();
     }
 
     private Vector3 GetMousePosition()

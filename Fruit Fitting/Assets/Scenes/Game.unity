@@ -392,6 +392,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Grid: {fileID: 1041933831}
+  level1Data:
+    restrictions: {fileID: 11400000, guid: 1ce5f6d57a039774abe83a40e5f7660c, type: 2}
+    Rows: 3
+    Cols: 5
 --- !u!4 &330581377
 Transform:
   m_ObjectHideFlags: 0
