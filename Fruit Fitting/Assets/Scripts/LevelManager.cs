@@ -5,7 +5,8 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Grid Grid;
     [SerializeField] private Level1Data level1Data;
-    [SerializeField] TextMeshProUGUI denemeText;
+    [SerializeField] private TextMeshProUGUI restrictionTextPrefab;
+    [SerializeField] private Transform restrictionTextParent;
 
     private void OnDisable()
     {
@@ -20,6 +21,7 @@ public class LevelManager : MonoBehaviour
     public void PrepareGame()
     {
         PrepareGrid();
+        AddRestrictions();
     }
 
     private void PrepareGrid()
@@ -35,13 +37,37 @@ public class LevelManager : MonoBehaviour
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Apple);
+        CheckRestrictions();
     }
 
     public void AddBanana()
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Banana);
-        denemeText.SetText(level1Data.restrictions.list[0].restrictionStr);
+        CheckRestrictions();
+    }
+
+    public void AddBlueberry()
+    {
+        Cell emptyCell = Grid.GetEmptyCell();
+        emptyCell.InsertItem(ItemType.Blueberry);
+        CheckRestrictions();
+    }
+
+    public void AddPear()
+    {
+        Cell emptyCell = Grid.GetEmptyCell();
+        emptyCell.InsertItem(ItemType.Pear);
+        CheckRestrictions();
+    }
+
+    private void AddRestrictions()
+    {
+        foreach (RestrictionSO restrictionSO in level1Data.restrictions.list)
+        {
+            restrictionSO.restrictionText = Instantiate(restrictionTextPrefab, restrictionTextParent);
+            restrictionSO.restrictionText.SetText(restrictionSO.restrictionStr);
+        }
     }
 
     private void CheckRestrictions()
@@ -51,11 +77,11 @@ public class LevelManager : MonoBehaviour
             bool isRestrictionPassed = restrictionSO.CheckRestriction();
             if (!isRestrictionPassed)
             {
-                denemeText.color = Color.red;
+                restrictionSO.restrictionText.color = Color.red;
             }
             else
             {
-                denemeText.color = Color.green;
+                restrictionSO.restrictionText.color = Color.green;
             }
         }
     }

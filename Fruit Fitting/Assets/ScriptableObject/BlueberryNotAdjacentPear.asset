@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a454e9e9767d0540925ea9601de3532, type: 3}
-  m_Name: Level1RestrictionList
+  m_Script: {fileID: 11500000, guid: 13cad453000b5fe4ba152ff267876432, type: 3}
+  m_Name: BlueberryNotAdjacentPear
   m_EditorClassIdentifier: 
-  list:
-  - {fileID: 11400000, guid: dab965e24059bba408dae95663513be8, type: 2}
-  - {fileID: 11400000, guid: 84e876ff70a7be4468d128ea00da8c29, type: 2}
+  restrictionStr: An <sprite name="Blueberry"> must never be adjacent to a <sprite
+    name="Pear">
+  restrictionText: {fileID: 0}
+  itemType1: 2
+  itemType2: 3
