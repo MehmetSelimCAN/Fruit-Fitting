@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353f4f1118dc5ea4380eb8e59b93d805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightGridTile: {fileID: 21300000, guid: 4702cb6ce9c4a68418f3fbd6f0ba48bd, type: 3}
-  darkGridTile: {fileID: 21300000, guid: a7eb1f5b721d91342ac642c7bbd39909, type: 3}
+  lightGridTile: {fileID: 21300000, guid: 5025a6dfcfef1b044a19a1e7dc57fefb, type: 3}
+  darkGridTile: {fileID: 21300000, guid: d6804555b9aeb994791380a99518c7d7, type: 3}
