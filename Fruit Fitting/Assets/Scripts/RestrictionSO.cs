@@ -4,7 +4,7 @@ public class RestrictionSO : ScriptableObject
 {
     public string restrictionStr;
 
-    public virtual bool CheckRestriction(Grid grid)
+    public virtual bool CheckRestriction()
     {
         return false;
     }

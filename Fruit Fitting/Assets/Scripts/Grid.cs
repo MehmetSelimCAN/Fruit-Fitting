@@ -117,5 +117,7 @@ public class Grid : MonoBehaviour
         Vector3Int tempPosition = firstCell.Position;
         firstCell.Move(secondCell.Position);
         secondCell.Move(tempPosition);
+
+        EventManager.CellMoved();
     }
 }

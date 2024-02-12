@@ -6,7 +6,17 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Grid Grid;
     [SerializeField] private Level1Data level1Data;
     [SerializeField] TextMeshProUGUI denemeText;
-     
+
+    private void OnDisable()
+    {
+        EventManager.CellMovedEvent -= CheckRestrictions;
+    }
+
+    private void OnEnable()
+    {
+        EventManager.CellMovedEvent += CheckRestrictions;
+    }
+
     public void PrepareGame()
     {
         PrepareGrid();
@@ -25,20 +35,28 @@ public class LevelManager : MonoBehaviour
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Apple);
-        denemeText.SetText(level1Data.restrictions.list[0].restrictionStr);
     }
 
     public void AddBanana()
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Banana);
+        denemeText.SetText(level1Data.restrictions.list[0].restrictionStr);
     }
 
     private void CheckRestrictions()
     {
         foreach (RestrictionSO restrictionSO in level1Data.restrictions.list)
         {
-            restrictionSO.CheckRestriction(Grid);
+            bool isRestrictionPassed = restrictionSO.CheckRestriction();
+            if (!isRestrictionPassed)
+            {
+                denemeText.color = Color.red;
+            }
+            else
+            {
+                denemeText.color = Color.green;
+            }
         }
     }
 }
