@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Level1Data level1Data;
     [SerializeField] private TextMeshProUGUI restrictionTextPrefab;
     [SerializeField] private Transform restrictionTextParent;
+
+    [SerializeField] private NewFruitsPanel newFruitsPanel;
 
     private void OnDisable()
     {
@@ -22,6 +25,7 @@ public class LevelManager : MonoBehaviour
     {
         PrepareGrid();
         AddRestrictions();
+        AddNewFruits();
     }
 
     private void PrepareGrid()
@@ -37,28 +41,24 @@ public class LevelManager : MonoBehaviour
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Apple);
-        CheckRestrictions();
     }
 
     public void AddBanana()
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Banana);
-        CheckRestrictions();
     }
 
     public void AddBlueberry()
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Blueberry);
-        CheckRestrictions();
     }
 
     public void AddPear()
     {
         Cell emptyCell = Grid.GetEmptyCell();
         emptyCell.InsertItem(ItemType.Pear);
-        CheckRestrictions();
     }
 
     private void AddRestrictions()
@@ -68,6 +68,36 @@ public class LevelManager : MonoBehaviour
             restrictionSO.restrictionText = Instantiate(restrictionTextPrefab, restrictionTextParent);
             restrictionSO.restrictionText.SetText(restrictionSO.restrictionStr);
         }
+    }
+
+    private void AddNewFruits()
+    {
+        newFruitsPanel.Show();
+        newFruitsPanel.SetText(level1Data.newFruits.newFruitsStr);
+
+        foreach (NewFruitSO newFruitSO in level1Data.newFruits.list)
+        {
+            for (int i = 0; i < newFruitSO.itemCount; i++)
+            {
+                NewFruitGO newFruitGO = newFruitsPanel.AddNewFruitGO();
+                newFruitsPanel.ChangeButtonImage(newFruitGO, newFruitSO.itemType);
+                newFruitGO.button.onClick.AddListener(() => NewFruitButtonClicked(newFruitGO, newFruitSO));
+            }
+        }
+    }
+
+    private void NewFruitButtonClicked(NewFruitGO newFruitGO, NewFruitSO newFruitSO)
+    {
+        AddFruit(newFruitSO.itemType);
+        newFruitsPanel.DisableButtonImage(newFruitGO);
+        newFruitsPanel.CheckAnyFruitRemain();
+    }
+
+    private void AddFruit(ItemType itemType)
+    {
+        Cell emptyCell = Grid.GetEmptyCell();
+        emptyCell.InsertItem(itemType);
+        CheckRestrictions();
     }
 
     private void CheckRestrictions()
