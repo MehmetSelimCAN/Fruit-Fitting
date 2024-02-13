@@ -2,6 +2,14 @@ public enum ItemType
 {
     Apple,
     Banana,
-    Blueberry,
+    Carrot,
+    Cherry,
+    Coconut,
+    Eggplant,
+    Grapes,
+    Lemon,
+    Lettuce,
+    Mushroom,
+    Orange,
     Pear,
 }

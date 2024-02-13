@@ -942,7 +942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <sprite name="Blueberry">
+  m_text: <sprite name="Coconut">
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1197,10 +1197,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91049450c0f48a5408f9ccf50538e780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AppleSprite: {fileID: 21300000, guid: f8c09b2eae5cf5949bce35b6313f53fd, type: 3}
+  AppleSprite: {fileID: 21300000, guid: d3cbae943cdc5b54c9f76fde35ec8788, type: 3}
   BananaSprite: {fileID: 21300000, guid: 4274c2bb4bdb9fd4b895311810c02ec2, type: 3}
-  BlueberrySprite: {fileID: 21300000, guid: eca39bee21fa1fe469f2b7212f41b4e9, type: 3}
-  PearSprite: {fileID: 21300000, guid: 35915a446de12354cad3dc77df10048c, type: 3}
+  CarrotSprite: {fileID: 21300000, guid: 71b258019bd0378499d64545af18a1cf, type: 3}
+  CherrySprite: {fileID: 21300000, guid: 011e4070bcaa9d64ebe3854704117163, type: 3}
+  CoconutSprite: {fileID: 21300000, guid: 28e43f39de776904ca3f12c3c78e87eb, type: 3}
+  EggplantSprite: {fileID: 21300000, guid: eb0272c2d3c543e41b4ade25ae273544, type: 3}
+  GrapesSprite: {fileID: 21300000, guid: 770dc5c2062bcff4ab3ce1d05db16dd5, type: 3}
+  LemonSprite: {fileID: 21300000, guid: 89b27b4ac2faf9d40a8e29548e502e4f, type: 3}
+  LettuceSprite: {fileID: 21300000, guid: 7662c6156cd4a0b4bb1e4cbab4e955dc, type: 3}
+  MushroomSprite: {fileID: 21300000, guid: 116cbe8d68a75bb46a409eea6ba55754, type: 3}
+  OrangeSprite: {fileID: 21300000, guid: bd501807f3b6bb5419208befc08e2377, type: 3}
+  PearSprite: {fileID: 21300000, guid: 6015a850a9c121a43b5e3abda48c75b9, type: 3}
 --- !u!1 &1041933829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1633,7 @@ GameObject:
   - component: {fileID: 1378886521}
   - component: {fileID: 1378886520}
   m_Layer: 5
-  m_Name: AddBlueberryButton
+  m_Name: AddCoconutButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

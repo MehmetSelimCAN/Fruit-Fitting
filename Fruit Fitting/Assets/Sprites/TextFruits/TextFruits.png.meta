@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8b5c47a98d1cb58459bcfef78dd940d6
+guid: 742e9105743e0c24ebea9df2ecf7fb77
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,8 +48,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
-  spriteBorder: {x: 0, y: 0, z: 200, w: 200}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TextFruits_0
+      name: grapes-imageonline.co-merged-imageonline.co-merged_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 200
-        width: 200
-        height: 200
+        y: 1024
+        width: 512
+        height: 512
       alignment: 9
       pivot: {x: 0, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40b2847c1031a6742a935d015e748ef6
-      internalID: 1278168850
+      spriteID: 3ca8bf9c224ca4b4e9dea6bb73c1927f
+      internalID: 1111010468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TextFruits_1
+      name: grapes-imageonline.co-merged-imageonline.co-merged_1
       rect:
         serializedVersion: 2
-        x: 200
-        y: 200
-        width: 200
-        height: 200
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
       alignment: 9
       pivot: {x: 0, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,146 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc6c51b4ebd1d44daca39cc93448ff6
-      internalID: -2108399125
+      spriteID: 8f8db820726f56d4aaab5da4bfefcfd3
+      internalID: 1271431102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TextFruits_2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_2
       rect:
         serializedVersion: 2
-        x: 1
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0fe0264c8cd43944880ceaf2b9c2cb2
+      internalID: 1807713043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcd2cdf256d5dd41b826266e96f6339
+      internalID: -928853105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac4292c39eb30c4687a8dad7f426ea6
+      internalID: 594375510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4064dc1cfa806a243997ac7dac8f7b34
+      internalID: 1763698070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf10023380c5a0a448041f2631201cda
+      internalID: -1295756784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbda3ef8467e4f546880a0a3e4e1ffb6
+      internalID: 1210069963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_8
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 200
-        height: 200
+        width: 512
+        height: 512
       alignment: 9
       pivot: {x: 0, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55975a1cad13f2b42b9ca1aa0ea718f7
-      internalID: 382878457
+      spriteID: 16c3fe3efac29214e9d7756e5d262d73
+      internalID: 155393697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TextFruits_3
+      name: grapes-imageonline.co-merged-imageonline.co-merged_9
       rect:
         serializedVersion: 2
-        x: 200
-        y: 1
-        width: 200
-        height: 200
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 9
       pivot: {x: 0, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +326,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d0a87c70ae557d4d89946d5d9f93726
-      internalID: 61150305
+      spriteID: b37ca99d9afc8ff41bf2f866fc51936f
+      internalID: -1780602132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d7322214cb6d449a136b7783cfa269
+      internalID: 282465345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapes-imageonline.co-merged-imageonline.co-merged_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a3eb801dc15f9428c0854e802038c5
+      internalID: -1421791968
       vertices: []
       indices: 
       edges: []
@@ -210,17 +378,25 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TextFruits_0: 1278168850
-      TextFruits_1: -2108399125
-      TextFruits_2: 382878457
-      TextFruits_3: 61150305
+      grapes-imageonline.co-merged-imageonline.co-merged_0: 1111010468
+      grapes-imageonline.co-merged-imageonline.co-merged_1: 1271431102
+      grapes-imageonline.co-merged-imageonline.co-merged_10: 282465345
+      grapes-imageonline.co-merged-imageonline.co-merged_11: -1421791968
+      grapes-imageonline.co-merged-imageonline.co-merged_2: 1807713043
+      grapes-imageonline.co-merged-imageonline.co-merged_3: -928853105
+      grapes-imageonline.co-merged-imageonline.co-merged_4: 594375510
+      grapes-imageonline.co-merged-imageonline.co-merged_5: 1763698070
+      grapes-imageonline.co-merged-imageonline.co-merged_6: -1295756784
+      grapes-imageonline.co-merged-imageonline.co-merged_7: 1210069963
+      grapes-imageonline.co-merged-imageonline.co-merged_8: 155393697
+      grapes-imageonline.co-merged-imageonline.co-merged_9: -1780602132
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

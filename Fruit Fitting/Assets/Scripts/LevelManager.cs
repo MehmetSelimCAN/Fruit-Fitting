@@ -49,10 +49,10 @@ public class LevelManager : MonoBehaviour
         emptyCell.InsertItem(ItemType.Banana);
     }
 
-    public void AddBlueberry()
+    public void AddCoconut()
     {
         Cell emptyCell = Grid.GetEmptyCell();
-        emptyCell.InsertItem(ItemType.Blueberry);
+        emptyCell.InsertItem(ItemType.Coconut);
     }
 
     public void AddPear()
