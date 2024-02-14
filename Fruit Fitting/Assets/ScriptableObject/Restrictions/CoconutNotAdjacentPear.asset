@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoconutNotAdjacentPear
   m_EditorClassIdentifier: 
   restrictionStr: An <sprite name="Coconut"> must never be adjacent to a <sprite
-    name="Pear">
-  restrictionText: {fileID: 0}
+    name="Pear">.
+  restrictionArea: {fileID: 0}
   itemType1: 4
   itemType2: 11

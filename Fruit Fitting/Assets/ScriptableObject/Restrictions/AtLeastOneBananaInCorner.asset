@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13cad453000b5fe4ba152ff267876432, type: 3}
-  m_Name: AppleNotAdjacentBanana
+  m_Script: {fileID: 11500000, guid: 4e371baac2844114e8cd5b6bea70e894, type: 3}
+  m_Name: AtLeastOneBananaInCorner
   m_EditorClassIdentifier: 
-  restrictionStr: An <sprite name="Apple"> must never be adjacent to a <sprite name="Banana">
-  itemType1: 0
-  itemType2: 1
+  restrictionStr: At least one <sprite name="Banana"> must be in a corner.
+  restrictionArea: {fileID: 0}
+  itemType1: 1
