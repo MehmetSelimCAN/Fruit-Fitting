@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cad453000b5fe4ba152ff267876432, type: 3}
   m_Name: CoconutNotAdjacentPear
   m_EditorClassIdentifier: 
-  restrictionStr: An <sprite name="Blueberry"> must never be adjacent to a <sprite
+  restrictionStr: An <sprite name="Coconut"> must never be adjacent to a <sprite
     name="Pear">
   restrictionText: {fileID: 0}
   itemType1: 4

@@ -17,6 +17,9 @@ public class SpriteProvider : MonoBehaviour
     public Sprite OrangeSprite;
     public Sprite PearSprite;
 
+    public Sprite correctBackgroundSprite;
+    public Sprite wrongBackgroundSprite;
+
     private void Awake()
     {
         Instance = this;
@@ -52,5 +55,15 @@ public class SpriteProvider : MonoBehaviour
                 return PearSprite;
         }
         return null;
+    }
+
+    public Sprite GetBackgroundSpriteForCorrectness(bool isCorrect)
+    {
+        if (isCorrect)
+        {
+            return correctBackgroundSprite;
+        }
+
+        return wrongBackgroundSprite;
     }
 }

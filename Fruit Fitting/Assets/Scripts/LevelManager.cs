@@ -1,13 +1,11 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Grid Grid;
     [SerializeField] private Level1Data level1Data;
-    [SerializeField] private TextMeshProUGUI restrictionTextPrefab;
-    [SerializeField] private Transform restrictionTextParent;
+    [SerializeField] private RestrictionArea restrictionAreaPrefab;
+    [SerializeField] private Transform restrictionAreaParent;
 
     [SerializeField] private NewFruitsPanel newFruitsPanel;
 
@@ -63,10 +61,12 @@ public class LevelManager : MonoBehaviour
 
     private void AddRestrictions()
     {
+        int restrictionNumber = 1;
         foreach (RestrictionSO restrictionSO in level1Data.restrictions.list)
         {
-            restrictionSO.restrictionText = Instantiate(restrictionTextPrefab, restrictionTextParent);
-            restrictionSO.restrictionText.SetText(restrictionSO.restrictionStr);
+            restrictionSO.restrictionArea = Instantiate(restrictionAreaPrefab, restrictionAreaParent);
+            restrictionSO.restrictionArea.SetText(restrictionNumber + ". " + restrictionSO.restrictionStr);
+            restrictionNumber++;
         }
     }
 
@@ -105,14 +105,7 @@ public class LevelManager : MonoBehaviour
         foreach (RestrictionSO restrictionSO in level1Data.restrictions.list)
         {
             bool isRestrictionPassed = restrictionSO.CheckRestriction();
-            if (!isRestrictionPassed)
-            {
-                restrictionSO.restrictionText.color = Color.red;
-            }
-            else
-            {
-                restrictionSO.restrictionText.color = Color.green;
-            }
+            restrictionSO.restrictionArea.UpdateArea(isRestrictionPassed);
         }
     }
 }

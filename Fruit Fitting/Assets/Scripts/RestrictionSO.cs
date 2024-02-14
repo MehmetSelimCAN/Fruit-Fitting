@@ -1,10 +1,9 @@
-using TMPro;
 using UnityEngine;
 
 public class RestrictionSO : ScriptableObject
 {
     public string restrictionStr;
-    [HideInInspector] public TextMeshProUGUI restrictionText;
+    [HideInInspector] public RestrictionArea restrictionArea;
 
     public virtual bool CheckRestriction()
     {
