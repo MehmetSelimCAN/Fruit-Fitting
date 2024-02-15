@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -6,8 +7,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Level1Data level1Data;
     [SerializeField] private RestrictionArea restrictionAreaPrefab;
     [SerializeField] private Transform restrictionAreaParent;
-
-    [SerializeField] private NewFruitsPanel newFruitsPanel;
+    private List<RestrictionSO> currentRestrictions = new List<RestrictionSO>();
 
     private void OnDisable()
     {
@@ -22,8 +22,7 @@ public class LevelManager : MonoBehaviour
     public void PrepareGame()
     {
         PrepareGrid();
-        AddRestrictions();
-        AddNewFruits();
+        AddNewRestriction();
     }
 
     private void PrepareGrid()
@@ -35,62 +34,44 @@ public class LevelManager : MonoBehaviour
         Grid.Prepare();
     }
 
-    public void AddApple()
+    private void AddNewRestriction()
     {
-        Cell emptyCell = Grid.GetEmptyCell();
-        emptyCell.InsertItem(ItemType.Apple);
-    }
+        int restrictionNumber = currentRestrictions.Count;
+        RestrictionSO newRestrictionSO = level1Data.restrictions.list[restrictionNumber];
+        newRestrictionSO.restrictionArea = Instantiate(restrictionAreaPrefab, restrictionAreaParent);
+        newRestrictionSO.restrictionArea.SetText((restrictionNumber + 1) + ". " + newRestrictionSO.restrictionStr);
 
-    public void AddBanana()
-    {
-        Cell emptyCell = Grid.GetEmptyCell();
-        emptyCell.InsertItem(ItemType.Banana);
-    }
-
-    public void AddCoconut()
-    {
-        Cell emptyCell = Grid.GetEmptyCell();
-        emptyCell.InsertItem(ItemType.Coconut);
-    }
-
-    public void AddPear()
-    {
-        Cell emptyCell = Grid.GetEmptyCell();
-        emptyCell.InsertItem(ItemType.Pear);
-    }
-
-    private void AddRestrictions()
-    {
-        int restrictionNumber = 1;
-        foreach (RestrictionSO restrictionSO in level1Data.restrictions.list)
+        if (newRestrictionSO.IsNewFruitRestriction)
         {
-            restrictionSO.restrictionArea = Instantiate(restrictionAreaPrefab, restrictionAreaParent);
-            restrictionSO.restrictionArea.SetText(restrictionNumber + ". " + restrictionSO.restrictionStr);
-            restrictionNumber++;
+            InitializeNewFruitsPanel(newRestrictionSO);
         }
+
+        currentRestrictions.Add(newRestrictionSO);
+        CheckRestrictions();
     }
 
-    private void AddNewFruits()
+    private void InitializeNewFruitsPanel(RestrictionSO restrictionSO)
     {
-        newFruitsPanel.Show();
-        newFruitsPanel.SetText(level1Data.newFruits.newFruitsStr);
+        NewFruitRestrictionSO newFruitRestrictionSO = (NewFruitRestrictionSO)restrictionSO;
+        newFruitRestrictionSO.restrictionArea.EnlargeArea();
+        NewFruitsPanel newFruitsPanel = newFruitRestrictionSO.restrictionArea.NewFruitsPanel;
 
-        foreach (NewFruitSO newFruitSO in level1Data.newFruits.list)
+        foreach (NewFruitSO newFruitSO in newFruitRestrictionSO.list)
         {
             for (int i = 0; i < newFruitSO.itemCount; i++)
             {
                 NewFruitGO newFruitGO = newFruitsPanel.AddNewFruitGO();
                 newFruitsPanel.ChangeButtonImage(newFruitGO, newFruitSO.itemType);
-                newFruitGO.button.onClick.AddListener(() => NewFruitButtonClicked(newFruitGO, newFruitSO));
+                newFruitGO.button.onClick.AddListener(() => NewFruitButtonClicked(newFruitsPanel, newFruitGO, newFruitSO));
             }
         }
     }
 
-    private void NewFruitButtonClicked(NewFruitGO newFruitGO, NewFruitSO newFruitSO)
+    private void NewFruitButtonClicked(NewFruitsPanel newFruitsPanel, NewFruitGO newFruitGO, NewFruitSO newFruitSO)
     {
-        AddFruit(newFruitSO.itemType);
         newFruitsPanel.DisableButtonImage(newFruitGO);
         newFruitsPanel.CheckAnyFruitRemain();
+        AddFruit(newFruitSO.itemType);
     }
 
     private void AddFruit(ItemType itemType)
@@ -102,10 +83,21 @@ public class LevelManager : MonoBehaviour
 
     private void CheckRestrictions()
     {
-        foreach (RestrictionSO restrictionSO in level1Data.restrictions.list)
+        bool allCurrentRestrictionsPassed = true;
+        foreach (RestrictionSO restrictionSO in currentRestrictions)
         {
             bool isRestrictionPassed = restrictionSO.CheckRestriction();
             restrictionSO.restrictionArea.UpdateArea(isRestrictionPassed);
+
+            if (!isRestrictionPassed)
+            {
+                allCurrentRestrictionsPassed = false;
+            }
+        }
+
+        if (allCurrentRestrictionsPassed)
+        {
+            AddNewRestriction();
         }
     }
 }

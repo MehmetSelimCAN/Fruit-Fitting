@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class RestrictionArea : MonoBehaviour
 {
+    [SerializeField] private RectTransform rectTransform;
+
+    [SerializeField] private NewFruitsPanel newFruitsPanel;
+    public NewFruitsPanel NewFruitsPanel { get { return newFruitsPanel; } }
     [SerializeField] private Image restrictionBackground;
     [SerializeField] private TextMeshProUGUI restrictionText;
     private string restrictionStr;
@@ -15,6 +19,16 @@ public class RestrictionArea : MonoBehaviour
     {
         restrictionStr = text;
         restrictionText.SetText(wrongSpriteString + restrictionStr);
+    }
+
+    public void EnlargeArea()
+    {
+        rectTransform.sizeDelta = new Vector2(460, 100);
+    }
+
+    public void ShrinkArea()
+    {
+        rectTransform.sizeDelta = new Vector2(460, 50);
     }
 
     public void UpdateArea(bool isRestrictionPassed)
@@ -32,6 +46,10 @@ public class RestrictionArea : MonoBehaviour
     private void UpdateBackground(bool isRestrictionPassed)
     {
         restrictionBackground.sprite = SpriteProvider.Instance.GetBackgroundSpriteForCorrectness(isRestrictionPassed);
+        if (isRestrictionPassed)
+        {
+            ShrinkArea();
+        }
     }
 }
 
