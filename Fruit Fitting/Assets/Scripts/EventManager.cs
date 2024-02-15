@@ -7,4 +7,7 @@ public static class EventManager
 
     public static Action CellMovedEvent;
     public static void CellMoved() => CellMovedEvent?.Invoke();
+
+    public static Action RestrictionAreaUpdatedEvent;
+    public static void RestrictionAreaUpdated() => RestrictionAreaUpdatedEvent?.Invoke();
 }
