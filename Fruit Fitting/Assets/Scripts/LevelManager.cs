@@ -4,7 +4,9 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Grid Grid;
-    [SerializeField] private Level1Data level1Data;
+    [SerializeField] private LevelDataListSO levelDatas;
+    private LevelDataSO currentLevelDataSO;
+
     [SerializeField] private RestrictionArea restrictionAreaPrefab;
     [SerializeField] private Transform restrictionAreaParent;
     private List<RestrictionSO> currentRestrictions = new List<RestrictionSO>();
@@ -21,14 +23,16 @@ public class LevelManager : MonoBehaviour
 
     public void PrepareGame()
     {
+        int levelNumber = PlayerPrefs.GetInt("LevelNumber", 1);
+        currentLevelDataSO = levelDatas.list[levelNumber - 1];
         PrepareGrid();
         AddNewRestriction();
     }
 
     private void PrepareGrid()
     {
-        Grid.Rows = level1Data.Rows;
-        Grid.Cols = level1Data.Cols;
+        Grid.Rows = currentLevelDataSO.Rows;
+        Grid.Cols = currentLevelDataSO.Cols;
         Grid.CellsBackground = new CellBackground[Grid.Cols, Grid.Rows];
         Grid.Cells = new Cell[Grid.Cols, Grid.Rows];
         Grid.Prepare();
@@ -37,7 +41,7 @@ public class LevelManager : MonoBehaviour
     private void AddNewRestriction()
     {
         int restrictionNumber = currentRestrictions.Count;
-        RestrictionSO newRestrictionSO = level1Data.restrictions.list[restrictionNumber];
+        RestrictionSO newRestrictionSO = currentLevelDataSO.restrictions.list[restrictionNumber];
         newRestrictionSO.restrictionArea = Instantiate(restrictionAreaPrefab, restrictionAreaParent);
         newRestrictionSO.restrictionArea.SetText((restrictionNumber + 1) + ". " + newRestrictionSO.restrictionStr);
 
