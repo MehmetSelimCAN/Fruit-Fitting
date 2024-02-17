@@ -19,7 +19,8 @@ public class Menu : MonoBehaviour
 
     private void UpdateLevelText()
     {
-        levelText.SetText("Level " + PlayerPrefs.GetInt("LevelNumber", 1));
+        int lastLevelNumber = PlayerPrefsManager.GetLastLevelNumber();
+        levelText.SetText("Level " + lastLevelNumber);
     }
 
     private void LevelButtonClicked()

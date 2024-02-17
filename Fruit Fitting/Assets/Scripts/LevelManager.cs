@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
 
     public void PrepareGame()
     {
-        int levelNumber = PlayerPrefs.GetInt("LevelNumber", 1);
+        int levelNumber = PlayerPrefsManager.GetLastLevelNumber();
         currentLevelDataSO = levelDatas.list[levelNumber - 1];
         PrepareGrid();
         AddNewRestriction();
@@ -101,7 +101,15 @@ public class LevelManager : MonoBehaviour
 
         if (allCurrentRestrictionsPassed)
         {
-            AddNewRestriction();
+            if (currentRestrictions.Count == currentLevelDataSO.restrictions.list.Count)
+            {
+                //PlayerPrefsManager.IncreaseLastLevelNumber();
+                Debug.Log("Win");
+            }
+            else
+            {
+                AddNewRestriction();
+            }
         }
     }
 }
