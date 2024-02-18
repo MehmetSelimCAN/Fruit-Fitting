@@ -16,6 +16,9 @@ public class RestrictionArea : MonoBehaviour
     private string wrongSpriteString = "<sprite name=\"Wrong\"> ";
     private string correctSpriteString = "<sprite name=\"Correct\"> ";
 
+    private Color32 correctColor = new Color32(0x07, 0x8E, 0x19, 0xFF);
+    private Color32 wrongColor = new Color32(0xBE, 0x23, 0x23, 0xFF);
+
     public void SetText(string text)
     {
         restrictionStr = text;
@@ -48,7 +51,8 @@ public class RestrictionArea : MonoBehaviour
 
     private void UpdateBackground(bool isRestrictionPassed)
     {
-        restrictionBackground.sprite = SpriteProvider.Instance.GetBackgroundSpriteForCorrectness(isRestrictionPassed);
+        restrictionBackground.color = isRestrictionPassed ? correctColor : wrongColor;
+        //restrictionBackground.sprite = SpriteProvider.Instance.GetBackgroundSpriteForCorrectness(isRestrictionPassed);
         if (isRestrictionPassed)
         {
             ShrinkArea();

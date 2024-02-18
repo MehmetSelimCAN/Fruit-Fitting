@@ -13,6 +13,8 @@ public class Grid : MonoBehaviour
     [SerializeField] private CellBackground cellBackgroundPrefab;
     public static CellBackground[,] CellsBackground;
 
+    [SerializeField] private SpriteRenderer GridBorderPrefab;
+
     private void OnDisable()
     {
         EventManager.CellSwapEvent -= SwapCells;
@@ -30,7 +32,9 @@ public class Grid : MonoBehaviour
 
         CreateCells();
         PrepareCells();
+
         AdjustGridPosition();
+        AdjustGridBorder();
     }
 
     private void CreateCellsBackground()
@@ -88,9 +92,21 @@ public class Grid : MonoBehaviour
         float widthOffset = ((Cols - 1) / 2f);
         float heightOffset = ((Rows - 1) / 2f);
 
-        CellsParent.transform.position = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
-        CellsBackgroundParent.transform.position = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
+        CellsParent.position = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
+        CellsBackgroundParent.position = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
+    }
 
+    private void AdjustGridBorder()
+    {
+        float sizeOffset = 0.25f;
+
+        float widthOffset = ((Cols - 1) / 2f);
+        float heightOffset = ((Rows - 1) / 2f);
+
+        var gridBorder = Instantiate(GridBorderPrefab, Vector3.zero, Quaternion.identity, transform);
+
+        gridBorder.size = new Vector2(Cols + sizeOffset, Rows + sizeOffset);
+        gridBorder.transform.position = CellsParent.position + new Vector3(widthOffset, heightOffset);
     }
 
     public Cell GetEmptyCell()
