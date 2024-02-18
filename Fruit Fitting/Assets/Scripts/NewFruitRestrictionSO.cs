@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Fruit", menuName = "Restriction/New Fruit")]
+[CreateAssetMenu(fileName = "New Fruits", menuName = "Restriction/New Fruits")]
 public class NewFruitRestrictionSO : RestrictionSO
 {
     public List<NewFruitSO> list;

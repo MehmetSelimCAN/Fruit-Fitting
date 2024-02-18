@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13cad453000b5fe4ba152ff267876432, type: 3}
-  m_Name: AppleNotAdjacentBanana
+  m_Script: {fileID: 11500000, guid: 25ca1695b509eed48b7487989dabe545, type: 3}
+  m_Name: 1Pear
   m_EditorClassIdentifier: 
-  restrictionStr: An <sprite name="Apple"> must never be adjacent to a <sprite name="Pear">.
+  restrictionStr: Here's an <sprite name="Pear">. Click it to add it to the grid.
   restrictionArea: {fileID: 0}
-  itemType1: 0
-  itemType2: 5
+  list:
+  - {fileID: 11400000, guid: 6e547ab8e344103428917e42e746600b, type: 2}

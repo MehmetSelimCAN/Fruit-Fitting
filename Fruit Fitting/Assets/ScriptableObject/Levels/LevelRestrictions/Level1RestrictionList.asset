@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level1RestrictionList
   m_EditorClassIdentifier: 
   list:
-  - {fileID: 11400000, guid: 9aa7a62257c29a14f971ea48b7442e01, type: 2}
+  - {fileID: 11400000, guid: fca1d967a39edfd49bad838af569b28c, type: 2}
+  - {fileID: 11400000, guid: b028aae2ff1572147bfcd6f6e63cf11c, type: 2}
   - {fileID: 11400000, guid: dab965e24059bba408dae95663513be8, type: 2}
-  - {fileID: 11400000, guid: 9aa7a62257c29a14f971ea48b7442e01, type: 2}
-  - {fileID: 11400000, guid: 84e876ff70a7be4468d128ea00da8c29, type: 2}
+  - {fileID: 11400000, guid: ccb2187ebfb92204098d8900b58bbf02, type: 2}
   - {fileID: 11400000, guid: 891aa5831f1a2e5448df14f30335aad8, type: 2}

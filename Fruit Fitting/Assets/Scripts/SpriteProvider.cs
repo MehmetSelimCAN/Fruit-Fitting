@@ -6,16 +6,11 @@ public class SpriteProvider : MonoBehaviour
 
     public Sprite AppleSprite;
     public Sprite BananaSprite;
-    public Sprite CarrotSprite;
-    public Sprite CherrySprite;
-    public Sprite CoconutSprite;
-    public Sprite EggplantSprite;
+    public Sprite BlueberrySprite;
     public Sprite GrapesSprite;
-    public Sprite LemonSprite;
-    public Sprite LettuceSprite;
-    public Sprite MushroomSprite;
     public Sprite OrangeSprite;
     public Sprite PearSprite;
+    public Sprite StrawberrySprite;
 
     private void Awake()
     {
@@ -30,27 +25,18 @@ public class SpriteProvider : MonoBehaviour
                 return AppleSprite;
             case ItemType.Banana:
                 return BananaSprite;
-            case ItemType.Carrot:
-                return CarrotSprite;
-            case ItemType.Cherry:
-                return CherrySprite;
-            case ItemType.Coconut:
-                return CoconutSprite;
-            case ItemType.Eggplant:
-                return EggplantSprite;
+            case ItemType.Blueberry:
+                return BlueberrySprite;
             case ItemType.Grapes:
                 return GrapesSprite;
-            case ItemType.Lemon:
-                return LemonSprite;
-            case ItemType.Lettuce:
-                return LettuceSprite;
-            case ItemType.Mushroom: 
-                return MushroomSprite;
             case ItemType.Orange:
                 return OrangeSprite;
             case ItemType.Pear:
                 return PearSprite;
+            case ItemType.Strawberry:
+                return StrawberrySprite;
         }
+
         return null;
     }
 }
