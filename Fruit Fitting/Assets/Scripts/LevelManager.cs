@@ -91,7 +91,7 @@ public class LevelManager : MonoBehaviour
         foreach (RestrictionSO restrictionSO in currentRestrictions)
         {
             bool isRestrictionPassed = restrictionSO.CheckRestriction();
-            restrictionSO.restrictionArea.UpdateArea(isRestrictionPassed);
+            restrictionSO.restrictionArea.UpdateBackground(isRestrictionPassed);
 
             if (!isRestrictionPassed)
             {

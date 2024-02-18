@@ -11,18 +11,22 @@ public class RestrictionArea : MonoBehaviour
 
     [SerializeField] private Image restrictionBackground;
     [SerializeField] private TextMeshProUGUI restrictionText;
-    private string restrictionStr;
-
-    private string wrongSpriteString = "<sprite name=\"Wrong\"> ";
-    private string correctSpriteString = "<sprite name=\"Correct\"> ";
 
     private Color32 correctColor = new Color32(0x07, 0x8E, 0x19, 0xFF);
     private Color32 wrongColor = new Color32(0xBE, 0x23, 0x23, 0xFF);
 
     public void SetText(string text)
     {
-        restrictionStr = text;
-        restrictionText.SetText(wrongSpriteString + restrictionStr);
+        restrictionText.SetText(text);
+    }
+
+    public void UpdateBackground(bool isRestrictionPassed)
+    {
+        restrictionBackground.color = isRestrictionPassed ? correctColor : wrongColor;
+        if (isRestrictionPassed)
+        {
+            ShrinkArea();
+        }
     }
 
     public void EnlargeArea()
@@ -35,28 +39,6 @@ public class RestrictionArea : MonoBehaviour
     {
         rectTransform.sizeDelta = new Vector2(460, 50);
         EventManager.RestrictionAreaUpdated();
-    }
-
-    public void UpdateArea(bool isRestrictionPassed)
-    {
-        UpdateText(isRestrictionPassed);
-        UpdateBackground(isRestrictionPassed);
-    }
-
-    private void UpdateText(bool isRestrictionPassed)
-    {
-        string correctnessSpriteString = isRestrictionPassed ? correctSpriteString : wrongSpriteString;
-        restrictionText.SetText(correctnessSpriteString + restrictionStr);
-    }
-
-    private void UpdateBackground(bool isRestrictionPassed)
-    {
-        restrictionBackground.color = isRestrictionPassed ? correctColor : wrongColor;
-        //restrictionBackground.sprite = SpriteProvider.Instance.GetBackgroundSpriteForCorrectness(isRestrictionPassed);
-        if (isRestrictionPassed)
-        {
-            ShrinkArea();
-        }
     }
 }
 
