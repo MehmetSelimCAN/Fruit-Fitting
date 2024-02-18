@@ -6,7 +6,9 @@ public class RestrictionArea : MonoBehaviour
 {
     [SerializeField] private RectTransform rectTransform;
 
-    [SerializeField] private NewFruitsPanel newFruitsPanel;
+    [SerializeField] private NewFruitsPanel newFruitsPanelPrefab;
+
+    private NewFruitsPanel newFruitsPanel;
     public NewFruitsPanel NewFruitsPanel { get { return newFruitsPanel; } }
 
     [SerializeField] private Image restrictionBackground;
@@ -14,6 +16,12 @@ public class RestrictionArea : MonoBehaviour
 
     private Color32 correctColor = new Color32(0x07, 0x8E, 0x19, 0xFF);
     private Color32 wrongColor = new Color32(0xBE, 0x23, 0x23, 0xFF);
+
+    public NewFruitsPanel InstantiateNewFruitsPanel()
+    {
+        newFruitsPanel = Instantiate(newFruitsPanelPrefab, transform);
+        return newFruitsPanel;
+    }
 
     public void SetText(string text)
     {

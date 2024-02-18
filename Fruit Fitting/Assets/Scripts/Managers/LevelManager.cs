@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour
     {
         NewFruitRestrictionSO newFruitRestrictionSO = (NewFruitRestrictionSO)restrictionSO;
         newFruitRestrictionSO.restrictionArea.EnlargeArea();
-        NewFruitsPanel newFruitsPanel = newFruitRestrictionSO.restrictionArea.NewFruitsPanel;
+        NewFruitsPanel newFruitsPanel = newFruitRestrictionSO.restrictionArea.InstantiateNewFruitsPanel();
 
         foreach (NewFruitSO newFruitSO in newFruitRestrictionSO.list)
         {
