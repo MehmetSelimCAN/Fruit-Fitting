@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe7a06fe0193c84a9ecbd8601ed2369, type: 3}
   m_Name: AppleNotDiagonalApple
   m_EditorClassIdentifier: 
-  restrictionStr: 
+  restrictionStr: Each <sprite name="Apple"> cannot be diagonal from another <sprite
+    name="Apple">.
   restrictionArea: {fileID: 0}
   itemType1: 0
   itemType2: 0
