@@ -31,6 +31,6 @@ public class InSameColumnRestrictionSO : RestrictionSO
             }
         }
 
-        return itemType2Found;
+        return true;
     }
 }

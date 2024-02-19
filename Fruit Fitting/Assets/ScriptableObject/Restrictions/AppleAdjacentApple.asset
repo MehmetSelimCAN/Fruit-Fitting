@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78a79f97669ef194d9b2398e16a39d13, type: 3}
-  m_Name: Level Data List
+  m_Script: {fileID: 11500000, guid: f0f47980b095d2a4db30d56b2601e71c, type: 3}
+  m_Name: AppleAdjacentApple
   m_EditorClassIdentifier: 
-  list:
-  - {fileID: 11400000, guid: 9ff7504d0b9e923468c862ab61ca8be9, type: 2}
-  - {fileID: 11400000, guid: 81306bc73da346342999f25b458b3b96, type: 2}
+  restrictionStr: Each <sprite name="Apple"> must be adjacent to at least one other
+    <sprite name="Apple">.
+  restrictionArea: {fileID: 0}
+  itemType1: 0
+  itemType2: 0
