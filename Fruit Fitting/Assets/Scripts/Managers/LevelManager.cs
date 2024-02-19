@@ -103,8 +103,8 @@ public class LevelManager : MonoBehaviour
         {
             if (currentRestrictions.Count == currentLevelDataSO.restrictions.list.Count)
             {
-                //PlayerPrefsManager.IncreaseLastLevelNumber();
-                Debug.Log("Win");
+                PlayerPrefsManager.IncreaseLastLevelNumber();
+                EventManager.GameFinished();
             }
             else
             {

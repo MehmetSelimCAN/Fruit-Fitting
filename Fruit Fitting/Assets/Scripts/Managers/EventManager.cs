@@ -10,4 +10,7 @@ public static class EventManager
 
     public static Action RestrictionAreaUpdatedEvent;
     public static void RestrictionAreaUpdated() => RestrictionAreaUpdatedEvent?.Invoke();
+
+    public static Action GameFinishedEvent;
+    public static void GameFinished() => GameFinishedEvent?.Invoke();
 }
