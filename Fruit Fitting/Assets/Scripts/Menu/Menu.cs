@@ -6,16 +6,6 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private Button levelButton;
     [SerializeField] private TextMeshProUGUI levelText;
-    [SerializeField] private LevelManager levelManager;
-
-    [SerializeField] private Transform menuScene;
-    [SerializeField] private Transform gameScene;
-
-    private void Awake()
-    {
-        levelButton.onClick.AddListener(() => LevelButtonClicked());
-        UpdateLevelText();
-    }
 
     private void UpdateLevelText()
     {
@@ -25,18 +15,17 @@ public class Menu : MonoBehaviour
 
     private void LevelButtonClicked()
     {
-        PrepareGameScene();
-        levelManager.PrepareGame();
-    }
-
-    private void PrepareGameScene()
-    {
-        menuScene.gameObject.SetActive(false);
-        gameScene.gameObject.SetActive(true);
+        EventManager.GameStarted();
     }
 
     private void OnEnable()
     {
         UpdateLevelText();
+        levelButton.onClick.AddListener(() => LevelButtonClicked());
+    }
+
+    private void OnDisable()
+    {
+        levelButton.onClick.RemoveListener(() => LevelButtonClicked());
     }
 }

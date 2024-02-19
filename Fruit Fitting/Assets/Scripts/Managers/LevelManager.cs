@@ -21,21 +21,17 @@ public class LevelManager : MonoBehaviour
         EventManager.CellMovedEvent += CheckRestrictions;
     }
 
+    private void Start()
+    {
+        PrepareGame();
+    }
+
     public void PrepareGame()
     {
         int levelNumber = PlayerPrefsManager.GetLastLevelNumber();
         currentLevelDataSO = levelDatas.list[levelNumber - 1];
-        PrepareGrid();
+        Grid.Prepare(currentLevelDataSO);
         AddNewRestriction();
-    }
-
-    private void PrepareGrid()
-    {
-        Grid.Rows = currentLevelDataSO.Rows;
-        Grid.Cols = currentLevelDataSO.Cols;
-        Grid.CellsBackground = new CellBackground[Grid.Cols, Grid.Rows];
-        Grid.Cells = new Cell[Grid.Cols, Grid.Rows];
-        Grid.Prepare();
     }
 
     private void AddNewRestriction()

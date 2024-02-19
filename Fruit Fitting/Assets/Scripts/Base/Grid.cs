@@ -25,8 +25,13 @@ public class Grid : MonoBehaviour
         EventManager.CellSwapEvent += SwapCells;
     }
 
-    public void Prepare()
+    public void Prepare(LevelDataSO currentLevelData)
     {
+        Rows = currentLevelData.Rows;
+        Cols = currentLevelData.Cols;
+        CellsBackground = new CellBackground[Cols, Rows];
+        Cells = new Cell[Cols, Rows];
+
         CreateCellsBackground();
         PrepareCellsBackground();
 
