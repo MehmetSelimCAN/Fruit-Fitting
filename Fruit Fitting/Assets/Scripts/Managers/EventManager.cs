@@ -16,4 +16,7 @@ public static class EventManager
 
     public static Action GameFinishedEvent;
     public static void GameFinished() => GameFinishedEvent?.Invoke();
+
+    public static Action BackToMenuEvent;
+    public static void BackToMenu() => BackToMenuEvent?.Invoke();
 }

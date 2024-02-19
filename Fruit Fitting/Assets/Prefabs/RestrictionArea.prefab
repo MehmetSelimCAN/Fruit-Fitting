@@ -86,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5971296758701177944}
   - component: {fileID: 8492554455071528247}
+  - component: {fileID: 1140822564756530935}
   m_Layer: 5
   m_Name: RestrictionArea
   m_TagString: Untagged
@@ -131,6 +132,19 @@ MonoBehaviour:
   newFruitsPanelPrefab: {fileID: 6561596129752150167, guid: 002cafdc0ba283e42886b483fc9d6010, type: 3}
   restrictionBackground: {fileID: 4033710852428215779}
   restrictionText: {fileID: 6825674065344423324}
+--- !u!114 &1140822564756530935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210001043508650964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0109daaf0d0bdc4f9fc5153a22405db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restrictionArea: {fileID: 5971296758701177944}
 --- !u!1 &8831257501690736553
 GameObject:
   m_ObjectHideFlags: 0

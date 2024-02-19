@@ -14,13 +14,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.GameStartedEvent += GameStarted;
-        EventManager.GameFinishedEvent += GameFinished;
+        EventManager.BackToMenuEvent += BackToMenu;
     }
 
     private void OnDisable()
     {
         EventManager.GameStartedEvent -= GameStarted;
-        EventManager.GameFinishedEvent -= GameFinished;
+        EventManager.BackToMenuEvent -= BackToMenu;
     }
 
     private void GameStarted()
@@ -28,13 +28,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(GAME_SCENE);
     }
 
-    private void GameFinished()
+    private void BackToMenu()
     {
         SceneManager.LoadScene(MENU_SCENE);
-    }
-
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(GAME_SCENE);
     }
 }

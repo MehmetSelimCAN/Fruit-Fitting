@@ -97,8 +97,9 @@ public class Grid : MonoBehaviour
         float widthOffset = ((Cols - 1) / 2f);
         float heightOffset = ((Rows - 1) / 2f);
 
-        CellsParent.position = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
-        CellsBackgroundParent.position = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
+        Vector3 gridPosition = centerOfLeftSideToWorldPoint - new Vector3(widthOffset, heightOffset);
+        CellsParent.position = gridPosition;
+        CellsBackgroundParent.position = gridPosition;
     }
 
     private void AdjustGridBorder()
