@@ -4,6 +4,7 @@ public static class PlayerPrefsManager
 {
     public static int GetLastLevelNumber()
     {
+        SetLastLevelNumber(2);
         if (PlayerPrefs.HasKey("LevelNumber"))
         {
             return PlayerPrefs.GetInt("LevelNumber", 1);

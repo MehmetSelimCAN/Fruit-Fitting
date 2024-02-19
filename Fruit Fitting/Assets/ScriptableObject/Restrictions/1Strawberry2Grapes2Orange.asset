@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ca1695b509eed48b7487989dabe545, type: 3}
-  m_Name: 2Grapes2Orange1Strawberry
+  m_Name: 1Strawberry2Grapes2Orange
   m_EditorClassIdentifier: 
   restrictionStr: New fruits just dropped! Click each one to add it to the grid.
   restrictionArea: {fileID: 0}
   list:
-  - {fileID: 11400000, guid: 6c15d7b4f7534554ab20030e2ad250da, type: 2}
-  - {fileID: 11400000, guid: 6c15d7b4f7534554ab20030e2ad250da, type: 2}
-  - {fileID: 11400000, guid: 4059e3dcc04759441bee571a744ff6aa, type: 2}
-  - {fileID: 11400000, guid: 4059e3dcc04759441bee571a744ff6aa, type: 2}
   - {fileID: 11400000, guid: 0047c8efd2d8ba64180568f1aa144481, type: 2}
+  - {fileID: 11400000, guid: 4059e3dcc04759441bee571a744ff6aa, type: 2}
+  - {fileID: 11400000, guid: 4059e3dcc04759441bee571a744ff6aa, type: 2}
+  - {fileID: 11400000, guid: 6c15d7b4f7534554ab20030e2ad250da, type: 2}
+  - {fileID: 11400000, guid: 6c15d7b4f7534554ab20030e2ad250da, type: 2}
