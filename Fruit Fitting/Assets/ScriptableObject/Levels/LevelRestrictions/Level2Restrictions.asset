@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a454e9e9767d0540925ea9601de3532, type: 3}
-  m_Name: Level1RestrictionList
+  m_Name: Level2Restrictions
   m_EditorClassIdentifier: 
   list:
-  - {fileID: 11400000, guid: fca1d967a39edfd49bad838af569b28c, type: 2}
-  - {fileID: 11400000, guid: b028aae2ff1572147bfcd6f6e63cf11c, type: 2}
+  - {fileID: 11400000, guid: 19dcf05534683ca449045acc4546320d, type: 2}
   - {fileID: 11400000, guid: dab965e24059bba408dae95663513be8, type: 2}
+  - {fileID: 11400000, guid: 891aa5831f1a2e5448df14f30335aad8, type: 2}
+  - {fileID: 11400000, guid: ae1f8fa8cccddde43ba984683da1705b, type: 2}
+  - {fileID: 11400000, guid: ca1e410ab9f202649b22dda95d510c6f, type: 2}
+  - {fileID: 11400000, guid: 0cdb94775b2ef9742b1f1a39fdb15d2e, type: 2}

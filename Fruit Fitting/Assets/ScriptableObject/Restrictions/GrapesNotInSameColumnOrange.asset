@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e7b59c7f81dcef488b6a6e316843e8f, type: 3}
-  m_Name: Level1_Data
+  m_Script: {fileID: 11500000, guid: 7896175ef2d43e3439500ae2df36ca98, type: 3}
+  m_Name: GrapesNotInSameColumnOrange
   m_EditorClassIdentifier: 
-  Rows: 2
-  Cols: 2
-  restrictions: {fileID: 11400000, guid: 1ce5f6d57a039774abe83a40e5f7660c, type: 2}
+  restrictionStr: <sprite name="Grapes"> and <sprite name="Orange"> cannot be in
+    the same column.
+  restrictionArea: {fileID: 0}
+  itemType1: 3
+  itemType2: 4

@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e7b59c7f81dcef488b6a6e316843e8f, type: 3}
-  m_Name: Level1_Data
+  m_Script: {fileID: 11500000, guid: 688962d0e8dd92344ac444835937e308, type: 3}
+  m_Name: BlueberryNotInSameRowBanana
   m_EditorClassIdentifier: 
-  Rows: 2
-  Cols: 2
-  restrictions: {fileID: 11400000, guid: 1ce5f6d57a039774abe83a40e5f7660c, type: 2}
+  restrictionStr: <sprite name="Blueberry"> and <sprite name="Banana"> cannot be
+    in the same row.
+  restrictionArea: {fileID: 0}
+  itemType1: 2
+  itemType2: 1

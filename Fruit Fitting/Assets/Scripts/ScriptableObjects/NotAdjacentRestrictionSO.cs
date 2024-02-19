@@ -18,14 +18,14 @@ public class NotAdjacentRestrictionSO : RestrictionSO
                         x != Grid.Cols - 1 && Grid.Cells[x + 1, y].Item?.ItemType == itemType2 ||
                         y != Grid.Rows - 1 && Grid.Cells[x, y + 1].Item?.ItemType == itemType2)
                     {
-                        Debug.Log("Adjacent");
+                        //Adjacent
                         return false;
                     }
                 }
             }
         }
 
-        Debug.Log("Not Adjacent");
+        //Not adjacent
         return true;
     }
 }
