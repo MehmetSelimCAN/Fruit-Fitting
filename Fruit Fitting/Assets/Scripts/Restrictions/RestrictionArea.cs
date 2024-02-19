@@ -39,13 +39,13 @@ public class RestrictionArea : MonoBehaviour
 
     public void EnlargeArea()
     {
-        rectTransform.sizeDelta = new Vector2(460, 100);
+        rectTransform.sizeDelta = new Vector2(460, 160);
         EventManager.RestrictionAreaUpdated();
     }
 
     public void ShrinkArea()
     {
-        rectTransform.sizeDelta = new Vector2(460, 50);
+        rectTransform.sizeDelta = new Vector2(460, 90);
         EventManager.RestrictionAreaUpdated();
     }
 }

@@ -57,13 +57,13 @@ public class CellDragDrop : MonoBehaviour
         cellSpriteRenderer.sortingOrder = newSortingOrder;
     }
 
-    private void DragCell()
+    public void DragCell()
     {
         Vector2 newPosition = GetMousePosition() - transform.position;
         draggingCellTransform.Translate(newPosition);
     }
 
-    private void SwapCell()
+    public void SwapCell()
     {
         Cell draggingCell = cell;
 
