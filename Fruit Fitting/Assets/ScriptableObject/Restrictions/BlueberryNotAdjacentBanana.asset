@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cad453000b5fe4ba152ff267876432, type: 3}
   m_Name: BlueberryNotAdjacentBanana
   m_EditorClassIdentifier: 
-  restrictionStr: 
+  restrictionStr: An <sprite name="Blueberry"> must never be adjacent to a <sprite
+    name="Banana">.
   restrictionArea: {fileID: 0}
-  itemType1: 0
-  itemType2: 0
+  itemType1: 2
+  itemType2: 1

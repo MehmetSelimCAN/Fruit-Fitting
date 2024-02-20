@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0ab92cf0f59a54a95e90df373f46c5, type: 3}
   m_Name: PearInSameColumnStrawberry
   m_EditorClassIdentifier: 
-  restrictionStr: <sprite name="Pear"> in same column with <sprite name="Strawberry">.
+  restrictionStr: Each <sprite name="Pear"> must be in same column with <sprite name="Strawberry">.
   restrictionArea: {fileID: 0}
   itemType1: 5
   itemType2: 6

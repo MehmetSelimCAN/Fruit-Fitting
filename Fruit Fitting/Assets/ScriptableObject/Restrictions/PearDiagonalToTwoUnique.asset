@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec9c0ce423920a4a82781b731267cdb, type: 3}
   m_Name: PearDiagonalToTwoUnique
   m_EditorClassIdentifier: 
-  restrictionStr: Each <sprite name="Pear"> must be diagonal to at least two unique
+  restrictionStr: Each <sprite name="Grapes"> must be diagonal to at least two unique
     fruits.
   restrictionArea: {fileID: 0}
-  itemType1: 5
+  itemType1: 3

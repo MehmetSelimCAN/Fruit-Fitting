@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ca1695b509eed48b7487989dabe545, type: 3}
   m_Name: 1Apple1Pear4Blueberry
   m_EditorClassIdentifier: 
-  restrictionStr: 
+  restrictionStr: There's a bit too much empty space. Let's add some more fruits!
   restrictionArea: {fileID: 0}
-  list: []
+  list:
+  - {fileID: 11400000, guid: af3186f23e4810e42980a10ff3f6f326, type: 2}
+  - {fileID: 11400000, guid: 6e547ab8e344103428917e42e746600b, type: 2}
+  - {fileID: 11400000, guid: 5359e093cf1b74b45b0f2f756a21b6f1, type: 2}
+  - {fileID: 11400000, guid: 5359e093cf1b74b45b0f2f756a21b6f1, type: 2}
+  - {fileID: 11400000, guid: 5359e093cf1b74b45b0f2f756a21b6f1, type: 2}
+  - {fileID: 11400000, guid: 5359e093cf1b74b45b0f2f756a21b6f1, type: 2}

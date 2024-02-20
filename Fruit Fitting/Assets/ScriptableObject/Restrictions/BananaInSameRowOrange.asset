@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b4583f3a855954e85638c5f0c57a77, type: 3}
   m_Name: BananaInSameRowOrange
   m_EditorClassIdentifier: 
-  restrictionStr: 
+  restrictionStr: Each <sprite name="Banana"> must be in a row with a <sprite name="Orange">.
   restrictionArea: {fileID: 0}
-  itemType1: 0
-  itemType2: 0
+  itemType1: 1
+  itemType2: 4
