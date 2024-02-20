@@ -1,7 +1,7 @@
 # Fruit Fitting
 Fit all the fruit into the grid while following all the restrictions!
 
-[Gameplay video on youtube]((https://youtu.be/EGFyWVri-YE))
+[Gameplay video on youtube](https://youtu.be/EGFyWVri-YE)
 
 [To play the game on itch.io](https://nikelajj.itch.io/fruit-fitting)
 
