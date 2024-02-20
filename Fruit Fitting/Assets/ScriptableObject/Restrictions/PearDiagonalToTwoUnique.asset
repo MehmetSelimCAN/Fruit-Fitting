@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4255b705c3428fd4e845e52132f5718c, type: 3}
-  m_Name: StrawberryAdjacentToFourUnique
+  m_Script: {fileID: 11500000, guid: 1ec9c0ce423920a4a82781b731267cdb, type: 3}
+  m_Name: PearDiagonalToTwoUnique
   m_EditorClassIdentifier: 
-  restrictionStr: Each <sprite name="Strawberry"> must be adjacent to four unique
+  restrictionStr: Each <sprite name="Pear"> must be diagonal to at least two unique
     fruits.
   restrictionArea: {fileID: 0}
-  itemType1: 6
+  itemType1: 5

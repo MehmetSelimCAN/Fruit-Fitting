@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ca1695b509eed48b7487989dabe545, type: 3}
-  m_Name: 3Apple4Blueberry
+  m_Name: 4Apple
   m_EditorClassIdentifier: 
-  restrictionStr: Here are three <sprite name="Apple">.
+  restrictionStr: Here are four <sprite name="Apple">.
   restrictionArea: {fileID: 0}
   list:
   - {fileID: 11400000, guid: af3186f23e4810e42980a10ff3f6f326, type: 2}
   - {fileID: 11400000, guid: af3186f23e4810e42980a10ff3f6f326, type: 2}
   - {fileID: 11400000, guid: af3186f23e4810e42980a10ff3f6f326, type: 2}
-  - {fileID: 11400000, guid: 5359e093cf1b74b45b0f2f756a21b6f1, type: 2}
-  - {fileID: 11400000, guid: 5359e093cf1b74b45b0f2f756a21b6f1, type: 2}
-  - {fileID: 11400000, guid: 5359e093cf1b74b45b0f2f756a21b6f1, type: 2}
-  - {fileID: 11400000, guid: 5359e093cf1b74b45b0f2f756a21b6f1, type: 2}
+  - {fileID: 11400000, guid: af3186f23e4810e42980a10ff3f6f326, type: 2}

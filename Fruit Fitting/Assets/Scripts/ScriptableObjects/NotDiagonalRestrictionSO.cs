@@ -16,7 +16,7 @@ public class NotDiagonalRestrictionSO : RestrictionSO
                     if (x > 0 && y > 0 && Grid.Cells[x - 1, y - 1].Item?.ItemType == itemType2 ||
                         x != Grid.Cols - 1 && y > 0 && Grid.Cells[x + 1, y - 1].Item?.ItemType == itemType2 ||
                         x > 0 && y != Grid.Rows - 1 && Grid.Cells[x - 1, y + 1].Item?.ItemType == itemType2 ||
-                        x != Grid.Cols - 1 && y != Grid.Cols - 1 && Grid.Cells[x + 1, y + 1].Item?.ItemType == itemType2)
+                        x != Grid.Cols - 1 && y != Grid.Rows - 1 && Grid.Cells[x + 1, y + 1].Item?.ItemType == itemType2)
                     {
                         //Diagonal
                         return false;

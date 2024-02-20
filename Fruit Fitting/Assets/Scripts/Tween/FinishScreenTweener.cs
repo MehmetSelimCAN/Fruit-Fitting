@@ -20,6 +20,7 @@ public class FinishScreenTweener : MonoBehaviour
     private void AnimateFinishScreen()
     {
         Sequence mySequence = DOTween.Sequence();
+        mySequence.AppendInterval(0.75f);
         mySequence.Append(fadeImage.DOScale(Vector3.one, 0.75f));
         mySequence.Append(congrulationsText.DOScale(Vector3.zero, 0.5f));
 

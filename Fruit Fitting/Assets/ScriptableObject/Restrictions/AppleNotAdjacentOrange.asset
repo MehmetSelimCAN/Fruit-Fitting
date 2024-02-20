@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4255b705c3428fd4e845e52132f5718c, type: 3}
-  m_Name: StrawberryAdjacentToFourUnique
+  m_Script: {fileID: 11500000, guid: 13cad453000b5fe4ba152ff267876432, type: 3}
+  m_Name: AppleNotAdjacentOrange
   m_EditorClassIdentifier: 
-  restrictionStr: Each <sprite name="Strawberry"> must be adjacent to four unique
-    fruits.
+  restrictionStr: An <sprite name="Apple"> must never be adjacent to a <sprite name="Orange">.
   restrictionArea: {fileID: 0}
-  itemType1: 6
+  itemType1: 0
+  itemType2: 4
