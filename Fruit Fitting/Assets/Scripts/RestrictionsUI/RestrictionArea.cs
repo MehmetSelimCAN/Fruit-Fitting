@@ -35,6 +35,10 @@ public class RestrictionArea : MonoBehaviour
         {
             ShrinkArea();
         }
+        else
+        {
+            EventManager.WrongRestrictionsChanged(this);
+        }
     }
 
     public void EnlargeArea()

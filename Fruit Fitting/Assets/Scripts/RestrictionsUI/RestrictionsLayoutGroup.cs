@@ -7,16 +7,23 @@ public class RestrictionsLayoutGroup : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.RestrictionAreaUpdatedEvent -= UpdateLayoutGroup;
+        EventManager.RestrictionAreaUpdatedEvent -= UpdateLayoutGroupSize;
+        EventManager.WrongRestrictionsChangedEvent -= UpdateLayoutGroupOrder;
     }
 
     private void OnEnable()
     {
-        EventManager.RestrictionAreaUpdatedEvent += UpdateLayoutGroup;
+        EventManager.RestrictionAreaUpdatedEvent += UpdateLayoutGroupSize;
+        EventManager.WrongRestrictionsChangedEvent += UpdateLayoutGroupOrder;
     }
 
-    private void UpdateLayoutGroup()
+    private void UpdateLayoutGroupSize()
     {
         layoutGroup.SetLayoutVertical();
+    }
+
+    private void UpdateLayoutGroupOrder(RestrictionArea restrictionArea)
+    {
+        restrictionArea.transform.SetAsLastSibling();
     }
 }

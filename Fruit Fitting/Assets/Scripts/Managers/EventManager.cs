@@ -11,6 +11,9 @@ public static class EventManager
     public static Action RestrictionAreaUpdatedEvent;
     public static void RestrictionAreaUpdated() => RestrictionAreaUpdatedEvent?.Invoke();
 
+    public static Action<RestrictionArea> WrongRestrictionsChangedEvent;
+    public static void WrongRestrictionsChanged(RestrictionArea restrictionArea) => WrongRestrictionsChangedEvent?.Invoke(restrictionArea);
+
     public static Action GameStartedEvent;
     public static void GameStarted() => GameStartedEvent?.Invoke();
 
